@@ -36,22 +36,30 @@ src/
 - Node.js (v18 or higher)
 - pnpm (v8 or higher)
 
+> **Note:** This project uses pnpm as the package manager. Please do not use npm or yarn.
+
 ### Installation
 
-1. Clone the repository
+1. Install pnpm if you haven't already:
+
+```bash
+curl -fsSL https://get.pnpm.io/install.sh | sh -
+```
+
+2. Clone the repository:
 
 ```bash
 git clone https://github.com/shrilakshmishastry/desi-diary-by-shri.git
 cd desi-diary-by-shri
 ```
 
-2. Install dependencies
+3. Install dependencies:
 
 ```bash
 pnpm install
 ```
 
-3. Start the development server
+4. Start the development server:
 
 ```bash
 pnpm dev
@@ -110,6 +118,8 @@ While this is primarily a personal blog, bug fixes and improvements are welcome!
 1. Fork the repository
 2. Create a feature branch
 3. Submit a Pull Request
+
+> **Note:** Please ensure you use pnpm for package management when contributing.
 
 ## License
 
