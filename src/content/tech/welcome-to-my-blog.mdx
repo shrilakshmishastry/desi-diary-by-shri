@@ -1,0 +1,42 @@
+export const frontmatter = {
+  title: "Welcome to My Blog",
+  date: "2024-03-20",
+  type: "tech",
+  description:
+    "An introduction to my technical blog where I share insights about frontend development and accessibility.",
+  slug: "welcome-to-my-blog",
+};
+
+# Welcome to My Blog
+
+Hello everyone! I'm excited to start sharing my thoughts and experiences about frontend development,
+accessibility, and open source contributions.
+
+## What to Expect
+
+In this blog, I'll be covering:
+
+- React and modern frontend development
+- Web accessibility best practices
+- Open source contributions and learnings
+- Technical tutorials and guides
+
+## Code Examples
+
+Here's a simple example of an accessible button component:
+
+```tsx
+const Button = ({ children, onClick, ...props }) => {
+  return (
+    <button
+      onClick={onClick}
+      className="px-4 py-2 rounded bg-blue-600 text-white"
+      {...props}
+    >
+      {children}
+    </button>
+  );
+};
+```
+
+Stay tuned for more posts!
