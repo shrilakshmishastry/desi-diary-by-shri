@@ -1,4 +1,4 @@
-export type BlogType = "tech" | "kannada";
+export type BlogType = "kannada";
 
 export type BlogFrontmatter = {
   title: string;

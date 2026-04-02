@@ -12,23 +12,12 @@ export const getBlogPost = async (
   code: React.ComponentType;
 }> => {
   try {
-    // Try tech directory first
-    try {
-      const post = await import(`../content/tech/${slug}.mdx`);
-      const frontmatter = post.frontmatter as BlogFrontmatter;
-      return {
-        frontmatter,
-        code: post.default,
-      };
-    } catch {
-      // If not found in tech, try kannada directory
-      const post = await import(`../content/kannada/${slug}.mdx`);
-      const frontmatter = post.frontmatter as BlogFrontmatter;
-      return {
-        frontmatter,
-        code: post.default,
-      };
-    }
+    const post = await import(`../content/kannada/${slug}.mdx`);
+    const frontmatter = post.frontmatter as BlogFrontmatter;
+    return {
+      frontmatter,
+      code: post.default,
+    };
   } catch (error) {
     console.error("Error loading blog post:", error);
     throw error;
@@ -41,8 +30,7 @@ export const getAllPosts = async (): Promise<
     slug: string;
   }>
 > => {
-  // Get all MDX files from both tech and kannada directories
-  const techModules = import.meta.glob<MDXModule>("../content/tech/*.mdx");
+  // Get all MDX files from kannada directory
   const kannadaModules = import.meta.glob<MDXModule>(
     "../content/kannada/*.mdx"
   );
@@ -61,14 +49,9 @@ export const getAllPosts = async (): Promise<
     );
   };
 
-  const [techPosts, kannadaPosts] = await Promise.all([
-    loadPosts(techModules),
-    loadPosts(kannadaModules),
-  ]);
+  const kannadaPosts = await loadPosts(kannadaModules);
 
-  const allPosts = [...techPosts, ...kannadaPosts];
-
-  return allPosts.sort((a, b) => {
+  return kannadaPosts.sort((a, b) => {
     return (
       new Date(b.frontmatter.date).getTime() -
       new Date(a.frontmatter.date).getTime()

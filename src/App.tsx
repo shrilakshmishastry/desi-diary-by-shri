@@ -5,7 +5,6 @@ import { Home } from "./pages/Home";
 import Blog from "./pages/blog/Blog";
 import BlogPostPage from "./pages/blog/BlogPost";
 import Gallery from "./pages/gallery/Gallery";
-import Talks from "./pages/talks/Talks";
 
 function App() {
   return (
@@ -17,7 +16,6 @@ function App() {
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPostPage />} />
             <Route path="/gallery" element={<Gallery />} />
-            <Route path="/talks" element={<Talks />} />
           </Routes>
         </MainLayout>
       </Router>

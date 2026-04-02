@@ -29,12 +29,6 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
               >
                 Gallery
               </Link>
-              <Link
-                to="/talks"
-                className="text-gray-900 dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
-              >
-                Talks
-              </Link>
             </div>
           </div>
         </nav>
@@ -50,28 +44,12 @@ export const MainLayout = ({ children }: MainLayoutProps) => {
             </p>
             <div className="flex gap-4">
               <a
-                href="https://github.com/shrilakshmishastry"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-gray-500 dark:hover:text-gray-300"
-              >
-                GitHub
-              </a>
-              <a
                 href="https://x.com/shrilakshmihg"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-gray-500 dark:hover:text-gray-300"
               >
                 X
-              </a>
-              <a
-                href="https://www.linkedin.com/in/shrilakshmi-shastry-29737516a/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-gray-500 dark:hover:text-gray-300"
-              >
-                LinkedIn
               </a>
             </div>
           </div>
